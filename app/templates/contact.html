@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+ <h1>Contact Form</h1>
+ </br>
+ <hr>
+ Fill in this form to contact the site owners.</br></br>
+ 
+ 
+<form action='{{ url_for('contact')}}' method="POST">
+ 
+
+ <div>
+ <label for="name"><h5>Name:<font color=#BA2C48>(Required)</font></h5>
+ 
+ Please enter your full name</br>
+ 
+<label>
+ <input class= "boxes" type="text" id="name" name="name" required/>
+</div></br></br>
+
+ <div>
+ <label for="mail"><h5>E-mail:<font color=#BA2C48>(Required)</font></br></h5>
+ Please enter your E-mail address.</br>
+<label>
+ <input class= "boxes" type="email" id="mail" name="email" required/>
+ </div></br></br>
+ 
+ <div>
+ <label for="subject"><h5>Subject:<font color=#BA2C48>(Required)</font></br></h5>
+ Please enter the subject for your message.</br>
+<label>
+ <input class= "boxes" type="text" id="subj" name="subject" required/>
+ </div></br></br>
+ 
+ <div>
+ <label for="msg"><h5>Message:<font color=#BA2C48>(Required)</font></br></h5>
+ Please enter the message you would like to send.</br>
+</label>
+</br>
+ <textarea class= "mbox" id="msg" name="message"  required>
+</textarea>
+
+</br></br>
+ 
+</div>
+ <button id= "Buttons" type="submit">Send
+</button>
+
+</form>
+
+
+    
+{% endblock %}
