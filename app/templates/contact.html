@@ -9,29 +9,29 @@
  
  
 <form action='{{ url_for('contact')}}' method="POST">
- 
+ {{form.csrf_token}}
 
  <div>
- <label for="name"><h5>Name:<font color=#BA2C48>(Required)</font></h5>
+ <label for="name"><h5>{{ form.name.label }}<font color=#BA2C48>(Required)</font></h5>
  
  Please enter your full name</br>
  
 <label>
- <input class= "boxes" type="text" id="name" name="name" required/>
+ {{ form.name(class='boxes') }}
 </div></br></br>
 
  <div>
  <label for="mail"><h5>E-mail:<font color=#BA2C48>(Required)</font></br></h5>
  Please enter your E-mail address.</br>
 <label>
- <input class= "boxes" type="email" id="mail" name="email" required/>
+ {{ form.email(class='boxes') }}
  </div></br></br>
  
  <div>
  <label for="subject"><h5>Subject:<font color=#BA2C48>(Required)</font></br></h5>
  Please enter the subject for your message.</br>
 <label>
- <input class= "boxes" type="text" id="subj" name="subject" required/>
+ {{ form.subject(class='boxes') }}
  </div></br></br>
  
  <div>
@@ -39,8 +39,7 @@
  Please enter the message you would like to send.</br>
 </label>
 </br>
- <textarea class= "mbox" id="msg" name="message"  required>
-</textarea>
+ {{ form.messages(class='boxes' }}
 
 </br></br>
  
